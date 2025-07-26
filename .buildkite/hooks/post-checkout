@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+export PULUMI_ACCESS_TOKEN="$(buildkite-agent secret get PULUMI_ACCESS_TOKEN)"
