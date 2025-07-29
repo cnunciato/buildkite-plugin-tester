@@ -2,7 +2,8 @@ steps:
   - label: ":pulumi: Preview"
     command: pulumi whoami
     plugins:
-      - cnunciato/pulumi 
+      - cnunciato/pulumi:
+          version: v3.182.0
           # use_oidc: true
           # audience: "urn:pulumi:org:cnunciato"
           # pulumi_token_type: "urn:pulumi:token-type:access_token:personal"
