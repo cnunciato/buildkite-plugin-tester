@@ -2,7 +2,7 @@ steps:
   - label: ":pulumi: Preview"
     command: pulumi whoami
     plugins:
-      - cnunciato/pulumi#610f65b:
+      - cnunciato/pulumi:
           version: 3.182.0
           # use_oidc: true
           # audience: "urn:pulumi:org:cnunciato"
