@@ -10,24 +10,22 @@ steps:
           pulumi_token_type: "urn:pulumi:token-type:access_token:personal"
           pulumi_token_scope: "user:cnunciato"
 
-  - label: ":nx: Set SHAs (with env)"
-    command: |
-      echo $$NX_BASE
-      echo $$NX_HEAD
-    plugins:
-      - nx-set-shas
-      - secrets:
-          variables:
-            GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+  - group: ":nx: Nx Set SHAs"
+    steps:
+      - label: ":nx: With ENVs"
+        command: |
+          echo $$NX_BASE
+          echo $$NX_HEAD
+        plugins:
+          - nx-set-shas
+          - secrets:
+              variables:
+                GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
 
-  - label: ":nx: Set SHAs (with param)"
-    command: |
-      echo $$NX_BASE
-      echo $$NX_HEAD
-      export MY_TOKEN="$$(buildkite-agent secret get GRAPHQL_API_TOKENZ)"
-    plugins:
-      # - secrets:
-      #     variables:
-      #       GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
-      - nx-set-shas:
-          api-token: $$MY_TOKEN
+      - label: ":nx: With param"
+        command: |
+          echo $$NX_BASE
+          echo $$NX_HEAD
+        plugins:
+          - nx-set-shas:
+              api-token: $$GRAPHQL_API_TOKEN
