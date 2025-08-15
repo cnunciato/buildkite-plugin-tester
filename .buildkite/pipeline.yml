@@ -1,6 +1,9 @@
 steps:
   - label: ":pulumi: Preview"
-    command: pulumi whoami
+    commands:
+      pulumi whoami
+      echo $$NX_BASE
+      echo $$NX_HEAD
     plugins:
       - pulumi:
           version: 3.184.0
@@ -8,3 +11,4 @@ steps:
           audience: "urn:pulumi:org:cnunciato"
           pulumi_token_type: "urn:pulumi:token-type:access_token:personal"
           pulumi_token_scope: "user:cnunciato"
+      - nx-set-shas
