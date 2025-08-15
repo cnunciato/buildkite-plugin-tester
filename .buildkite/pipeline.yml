@@ -29,4 +29,4 @@ steps:
           api-token: $$MY_TOKEN
       - secrets:
           variables:
-            MY_TOKEN: GRAPHQL_API_TOKEN
+            GRAPHQL_API_TOKEN: MY_TOKEN
