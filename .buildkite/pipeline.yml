@@ -15,7 +15,7 @@ steps:
       echo $$NX_BASE
       echo $$NX_HEAD
     plugins:
-      - nx-set-shas:
+      - nx-set-shas
       - secrets:
           variables:
             GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
@@ -25,8 +25,8 @@ steps:
       echo $$NX_BASE
       echo $$NX_HEAD
     plugins:
-      - nx-set-shas:
-          api-token: $$MY_TOKEN
       - secrets:
           variables:
-            GRAPHQL_API_TOKEN: MY_TOKEN
+            GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+      - nx-set-shas:
+          api-token: $$GRAPHQL_API_TOKEN
