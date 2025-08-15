@@ -12,7 +12,7 @@ steps:
           pulumi_token_type: "urn:pulumi:token-type:access_token:personal"
           pulumi_token_scope: "user:cnunciato"
       - nx-set-shas:
-          api-token: "${GRAPHQL_API_TOKEN}"
+          api-token: "$${GRAPHQL_API_TOKEN}"
       # - secrets:
       #     variables:
       #       GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
