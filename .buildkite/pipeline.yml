@@ -24,7 +24,7 @@ steps:
     command: |
       echo $$NX_BASE
       echo $$NX_HEAD
-      export MY_TOKEN="$$(buildkite-agent secret get GRAPHQL_API_TOKEN)"
+      export MY_TOKEN="$$(buildkite-agent secret get GRAPHQL_API_TOKENZ)"
     plugins:
       # - secrets:
       #     variables:
