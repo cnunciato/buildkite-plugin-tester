@@ -2,8 +2,6 @@ steps:
   - label: ":pulumi: Preview"
     command: |
       pulumi whoami
-      echo $$NX_BASE
-      echo $$NX_HEAD
     plugins:
       - pulumi:
           version: 3.184.0
@@ -11,8 +9,21 @@ steps:
           audience: "urn:pulumi:org:cnunciato"
           pulumi_token_type: "urn:pulumi:token-type:access_token:personal"
           pulumi_token_scope: "user:cnunciato"
+
+  - label: ":nx: Set SHAs (with env)"
+    command: |
+      echo $$NX_BASE
+      echo $$NX_HEAD
+    plugins:
       - nx-set-shas:
-          api-token: "$${GRAPHQL_API_TOKEN}"
-      # - secrets:
-      #     variables:
-      #       GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+      - secrets:
+          variables:
+            GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+
+  - label: ":nx: Set SHAs (with param)"
+    command: |
+      echo $$NX_BASE
+      echo $$NX_HEAD
+    plugins:
+      - nx-set-shas:
+          api-token: $$GRAPHQL_API_TOKEN
