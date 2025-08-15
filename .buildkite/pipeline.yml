@@ -1,5 +1,5 @@
 steps:
-  - label: ":pulumi: Preview"
+  - label: ":pulumi: Pulumi"
     command: |
       pulumi whoami
     plugins:
