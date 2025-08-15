@@ -28,4 +28,4 @@ steps:
           echo $$NX_HEAD
         plugins:
           - nx-set-shas:
-              api-token: $$GRAPHQL_API_TOKEN
+              api-token: $GRAPHQL_API_TOKEN
