@@ -1,6 +1,6 @@
 steps:
   - label: ":pulumi: Preview"
-    commands:
+    command: |
       pulumi whoami
       echo $$NX_BASE
       echo $$NX_HEAD
