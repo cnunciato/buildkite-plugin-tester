@@ -24,9 +24,10 @@ steps:
     command: |
       echo $$NX_BASE
       echo $$NX_HEAD
+      export MY_TOKEN="$$(buildkite-agent secret get GRAPHQL_API_TOKEN)"
     plugins:
-      - secrets:
-          variables:
-            GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+      # - secrets:
+      #     variables:
+      #       GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
       - nx-set-shas:
-          api-token: $$GRAPHQL_API_TOKEN
+          api-token: $$MY_TOKEN
