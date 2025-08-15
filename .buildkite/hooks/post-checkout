@@ -2,3 +2,4 @@
 set -euo pipefail
 
 # export PULUMI_ACCESS_TOKEN="$(buildkite-agent secret get PULUMI_ACCESS_TOKEN)"
+export GRAPHQL_API_TOKEN="$(buildkite-agent secret get GRAPHQL_API_TOKEN)"
